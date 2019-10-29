@@ -1271,13 +1271,16 @@ class URL implements Serializable {
 
     /**
      * The format of return value is '{group}/{interfaceName}:{version}'
+     * 生成服务的key，格式为'{group}/{interfaceName}:{version}'
      * @return
      */
     public String getServiceKey() {
+        //接口名
         String inf = getServiceInterface();
         if (inf == null) {
             return null;
         }
+        //
         return buildKey(inf, getParameter(GROUP_KEY), getParameter(VERSION_KEY));
     }
 
